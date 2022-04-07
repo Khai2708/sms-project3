@@ -2,7 +2,6 @@
 
 - Creating the projects 
 ```bash
-ros@ubuntu:~/catkin_ws/project2_ws$ cd ..
 ros@ubuntu:~/catkin_ws$ mkdir project3_ws
 ros@ubuntu:~/catkin_ws$ cd project3_ws/
 ros@ubuntu:~/catkin_ws/project3_ws$ mkdir src
@@ -14,6 +13,9 @@ Created folder project3/include/project3
 Created folder project3/src
 Successfully created files in /home/ros/catkin_ws/project3_ws/src/project3. Please adjust the values in package.xml.
 ros@ubuntu:~/catkin_ws/project3_ws/src$ cd ..
+---------------------------------------------------------------
+UPDATE src FOLDER CPP CODES (speed_calc.cpp & rpm_pub.cpp) AND C_MAKE FILE (add target information for building speed_calc & rpm_pub objects )
+---------------------------------------------------------------
 ros@ubuntu:~/catkin_ws/project3_ws$ catkin_make
 Base path: /home/ros/catkin_ws/project3_ws
 Source space: /home/ros/catkin_ws/project3_ws/src
@@ -35,9 +37,9 @@ ros@ubuntu:~/catkin_ws/project3_ws$
 ```
 - Clone the repository 
 ```bash
-ros@ubuntu:~/catkin_ws/project2_ws$ cd ..
 ros@ubuntu:~/catkin_ws$ mkdir project3_ws
-ros@ubuntu:~/catkin_ws/project1_ws$ git clone "https://github.com/online-courses-materials/sms-project3.git"
+ros@ubuntu:~/catkin_ws/project3_ws$ cd ..
+ros@ubuntu:~/catkin_ws/project3_ws$ git clone "https://github.com/online-courses-materials/sms-project3.git"
 ```
 
 - Run the rosecore in the command line
@@ -88,7 +90,7 @@ ros@ubuntu:~/catkin_ws/project3_ws$ rosrun project3 speed_calc
 [ WARN] [1649315004.945176571]:  No Value set for wheel_radius server parameter.
 
 ```
-- Run the publisher node in the new tab
+- Test changing wheel_radius parameter   in the new tab
 ```bash
 ros@ubuntu:~/catkin_ws/project3_ws$ rosparam list
 /rosdistro
@@ -105,12 +107,12 @@ ros@ubuntu:~/catkin_ws/project3_ws$ rosparam list
 /wheel_radius
 ros@ubuntu:~/catkin_ws/project3_ws$
 
-os@ubuntu:~/catkin_ws/project2_ws$ rostopic list
+os@ubuntu:~/catkin_ws/project3_ws$ rostopic list
 /rosout
 /rosout_agg
 /rpm
 /speed
-ros@ubuntu:~/catkin_ws/project2_ws$ rostopic echo rpm
+ros@ubuntu:~/catkin_ws/project3_ws$ rostopic echo rpm
 data: 60.0
 ---
 data: 60.0
@@ -128,7 +130,7 @@ data: 5.403534889221191
 ---
 data: 5.403534889221191
 ---
-data: 5.403534889221191
+data: 5.403534889221191  ( Value of speed changed after setting a new value for wheel_radius parameter)
 ---
 data: 0.7853975296020508
 ---
