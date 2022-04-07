@@ -35,6 +35,8 @@ ros@ubuntu:~/catkin_ws/project3_ws$
 ```
 - Clone the repository 
 ```bash
+ros@ubuntu:~/catkin_ws/project2_ws$ cd ..
+ros@ubuntu:~/catkin_ws$ mkdir project3_ws
 ros@ubuntu:~/catkin_ws/project1_ws$ git clone "https://github.com/online-courses-materials/sms-project3.git"
 ```
 
